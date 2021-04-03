@@ -1,0 +1,52 @@
+.container {
+  // background-color: #e3e3e3;
+  .main {
+    padding-bottom: 20px;
+    @media only screen and (max-width: 450px) {
+      font-size: 14px;
+    }
+    .heading,
+    .subheading,
+    .info {
+      font-weight: 500;
+      margin: 0;
+      padding-bottom: 15px;
+    }
+    .heading {
+      font-size: 2em;
+      // font-size: 35px;
+    }
+    .subheading {
+      font-size: 1.5em;
+      // font-size: 28px;
+    }
+    .info {
+      font-size: 1em;
+      // font-size: 20px;
+    }
+  }
+  model-viewer {
+    height: 450px;
+    width: 400px;
+    margin: auto;
+
+    @media only screen and (max-width: 450px) {
+      margin-top: 15px;
+      height: 300px;
+      width: 275px;
+    }
+  }
+
+  .about {
+    padding-top: 50px;
+    h4 {
+      text-align: center;
+      font-size: 22px;
+    }
+    .viewbtn {
+      display: flex;
+      margin: auto;
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.container {
+  text-align: center;
+  .heading {
+    font-weight: 500;
+  }
+  .signupBtn {
+    margin-top: 20px;
+  }
+  .para {
+    padding-top: 20px;
+    .loginBtn {
+      margin-left: 5px !important;
+    }
+  }
+}

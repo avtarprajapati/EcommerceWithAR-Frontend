@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px 10px;
+  height: 4rem;
+  text-align: center;
+}
+
+.container .login {
+  text-decoration: none;
+  color: black;
+  padding: 4px 11px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=header.module.css.map */
