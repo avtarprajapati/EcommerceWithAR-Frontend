@@ -4,13 +4,17 @@ import { domain } from './domain';
 const api = domain();
 
 export const createUser = (user) => {
-  return axios.post(`${api}/api/v1/users`, user);
+  return axios.post(`${api}/users`, user);
 };
 
 export const getUserByEmail = () => {
-  return axios.get(`${api}/api/v1/users`);
+  return axios.get(`${api}/users`);
 };
 
-export const getUserById = (id) => {
-  return axios.get(`${api}/api/v1/users/one?profileId=${id}`);
+export const getUserByProfileId = (id) => {
+  return axios.get(`${api}/users/${id}`);
+};
+
+export const updateUser = (id, updateData) => {
+  return axios.patch(`${api}/users/${id}`, updateData);
 };

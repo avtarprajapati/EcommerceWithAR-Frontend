@@ -23,7 +23,11 @@ export const ProductCard = (props) => {
         loading='lazy'
         ar-modes='scene-viewer webxr quick-look'
         camera-orbit='0.00001589deg 75deg 2.9m'
-      ></model-viewer>
+      >
+        <div className='progress-bar hide' slot='progress-bar'>
+          <div className='update-bar'></div>
+        </div>
+      </model-viewer>
       <CardContent>
         <Typography gutterBottom variant='h5' component='h2'>
           {title}
@@ -41,7 +45,7 @@ export const ProductCard = (props) => {
         >
           View
         </Button>
-        {/* <Button size='small' color='primary'>
+        {/* <Button size='small' color='primary' onClick={() => props.onCart(_id)}>
           Add to Cart
         </Button> */}
       </CardActions>
@@ -49,4 +53,6 @@ export const ProductCard = (props) => {
   );
 };
 
-ProductCard.defaultProps = {};
+ProductCard.defaultProps = {
+  onCart: () => {},
+};

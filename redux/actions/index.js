@@ -4,9 +4,9 @@ import {
   USER_LOGOUT,
   USER_SIGNUP,
   USER_VERIFY,
+  ADDED_TO_CART,
 } from './actionType';
-import { createUser } from '../../api/user';
-import { getUserById } from '../../api/user';
+import { createUser, getUserByProfileId, updateUser } from '../../api/user';
 
 import { auth } from '../../firebase';
 
@@ -37,7 +37,7 @@ export const verifyUser = () => async (dispatch) => {
   auth.onAuthStateChanged(async (user) => {
     if (user) {
       const userId = user.uid;
-      const { data } = await getUserById(userId);
+      const { data } = await getUserByProfileId(userId);
       if (data.data.length) {
         dispatch(userLogin({ ...data.data[0] }));
       } else {
@@ -45,4 +45,12 @@ export const verifyUser = () => async (dispatch) => {
       }
     }
   });
+};
+
+export const addToCart = (userId, cartsData) => async (dispatch, getState) => {
+  const res = await updateUser(userId, {
+    carts: cartsData.carts,
+  });
+
+  dispatch({ type: ADDED_TO_CART, payload: cartsData.carts });
 };

@@ -40,7 +40,11 @@ function Home(props) {
                 loading='lazy'
                 ar-modes='scene-viewer webxr quick-look'
                 camera-orbit='0.00001589deg 75deg 2.9m'
-              ></model-viewer>
+              >
+                <div className='progress-bar hide' slot='progress-bar'>
+                  <div className='update-bar'></div>
+                </div>
+              </model-viewer>
             </Grid>
           </Grid>
         </div>

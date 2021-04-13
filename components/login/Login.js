@@ -7,7 +7,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 import { auth } from '../../firebase';
 import { userLogin } from '../../redux/actions';
-import { getUserById } from '../../api/user';
+import { getUserByProfileId } from '../../api/user';
 import styles from './login.module.scss';
 
 function Login(props) {
@@ -21,7 +21,8 @@ function Login(props) {
     auth
       .signInWithEmailAndPassword(email, password)
       .then(async (firebaseRes) => {
-        const { data } = await getUserById(firebaseRes.user.uid);
+        const { data } = await getUserByProfileId(firebaseRes.user.uid);
+
         if (data.data.length) {
           props.userLogin({ ...data.data[0] });
           setSnackbar({
@@ -36,7 +37,6 @@ function Login(props) {
             message: 'not any user please register first',
             severity: 'error',
           });
-          console.log('not any user please register first');
         }
       })
       .catch((error) => console.log(error));

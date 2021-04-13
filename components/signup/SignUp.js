@@ -42,7 +42,6 @@ function SignUp(props) {
           email,
           profileId: res.user.uid,
         });
-        props.setCurrentPage('signup');
         setSnackbar({
           open: true,
           message: 'Sign up successfully, please login to shop',
@@ -52,6 +51,9 @@ function SignUp(props) {
         setLastName('');
         setEmail('');
         setPassword('');
+        setConfirmPassword('');
+
+        props.setCurrentPage('login');
       })
       .catch((err) => {
         setSnackbar({
