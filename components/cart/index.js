@@ -51,11 +51,11 @@ function Cart(props) {
         quantity: qtyItems[index],
       }));
 
+      console.log(userInfo._id, checkoutData);
+
       const { data } = await checkoutItem(userInfo._id, checkoutData);
 
-      const stripe = Stripe(
-        'pk_test_51IfReySCdPtYj5Y23V0v2NJL9oqgYbnOjudKJ0RqgSJAJFbjfGxm6qEib15EPDAlsqYtScL29rkC5zgoQCuLdKM000JTuEuexb'
-      );
+      const stripe = Stripe(process.env.STRIPE_KEY);
 
       const value = await stripe.redirectToCheckout({
         sessionId: data.session.id,
