@@ -14,6 +14,7 @@ import {
 import { CgProfile } from 'react-icons/cg';
 import { BiLogOut } from 'react-icons/bi';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import Router from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,13 +77,13 @@ function ProfileMenu(props) {
               </Typography>
               <Divider />
               <List dense>
-                <ListItem button>
+                <ListItem button onClick={() => Router.push('/history')}>
                   <CgProfile
                     size='20'
                     color='#6b6767'
                     className={classes.icon}
                   />
-                  <ListItemText primary='Profile' />
+                  <ListItemText primary='History' />
                 </ListItem>
                 <ListItem button onClick={props.logoutUser}>
                   <BiLogOut

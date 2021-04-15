@@ -7,7 +7,7 @@ import { getAllProduct } from '../api/product';
 function ShopPage(props) {
   return (
     <Layout auth>
-      <Shop {...props} />
+      <Shop {...props} heading='Shopping All Product' />
     </Layout>
   );
 }

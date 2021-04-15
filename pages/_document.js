@@ -10,7 +10,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script defer src='https://js.stripe.com/v3/'></script>
           {/* rel="stylesheet preload prefetch" as="style" crossorigin="anonymous"
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
           type="text/css" */}

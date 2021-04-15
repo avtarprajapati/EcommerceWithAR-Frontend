@@ -7,6 +7,7 @@ import { ProductCard, SnackbarComp } from '../common';
 
 function Shop(props) {
   const { data, status, userInfo } = props;
+  console.log(props);
   const [snackbar, setSnackbar] = useState({
     open: false,
     message: '',
@@ -21,24 +22,12 @@ function Shop(props) {
     });
   };
 
-  // const onCart = (productId) => {
-  //   console.log(productId);
-  //   if (!Object.keys(userInfo || {}).length) {
-  //     setSnackbar({
-  //       open: true,
-  //       message: 'Please login to add cart',
-  //       severity: 'error',
-  //     });
-  //     return false;
-  //   }
-  // };
-
   return (
     <>
       <div className={styles.shopcontainer}>
         <Container maxWidth='lg'>
           <div className={styles.heading}>
-            <h2>Shopping All Product</h2>
+            <h2>{props.heading}</h2>
           </div>
           <div>
             {status === 'success' ? (

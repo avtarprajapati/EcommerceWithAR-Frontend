@@ -4,13 +4,15 @@ import { useState, useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import { getUserProducts } from '../../api/cart';
-import { checkoutItem } from '../../api/checkout';
+import { checkoutItem } from '../../api/booking';
+import { loadStripe } from '@stripe/stripe-js';
 import styles from './index.module.scss';
 
 function Cart(props) {
   const { userInfo } = props;
   const [qtyItems, setQtyItems] = useState([]);
   const [productData, setProductData] = useState([]);
+  let stripe = null;
 
   const getProductData = async () => {
     if (userInfo?._id) {
@@ -21,6 +23,13 @@ function Cart(props) {
       setQtyItems(qtyData);
     }
   };
+
+  useEffect(() => {
+    (async () =>
+      (stripe = await loadStripe(
+        'pk_test_51IfReySCdPtYj5Y23V0v2NJL9oqgYbnOjudKJ0RqgSJAJFbjfGxm6qEib15EPDAlsqYtScL29rkC5zgoQCuLdKM000JTuEuexb'
+      )))();
+  }, []);
 
   useEffect(() => {
     getProductData();
@@ -51,13 +60,8 @@ function Cart(props) {
         quantity: qtyItems[index],
       }));
 
-      console.log(userInfo._id, checkoutData);
-
       const { data } = await checkoutItem(userInfo._id, checkoutData);
-
-      const stripe = Stripe(
-        'pk_test_51IfReySCdPtYj5Y23V0v2NJL9oqgYbnOjudKJ0RqgSJAJFbjfGxm6qEib15EPDAlsqYtScL29rkC5zgoQCuLdKM000JTuEuexb'
-      );
+      console.log(data);
 
       const value = await stripe.redirectToCheckout({
         sessionId: data.session.id,
