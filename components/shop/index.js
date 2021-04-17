@@ -7,7 +7,7 @@ import { ProductCard, SnackbarComp } from '../common';
 
 function Shop(props) {
   const { data, status, userInfo } = props;
-  console.log(props);
+
   const [snackbar, setSnackbar] = useState({
     open: false,
     message: '',
@@ -22,6 +22,15 @@ function Shop(props) {
     });
   };
 
+  const productRender = (data) => {
+    if (data.length) return <h4>Not any Products</h4>;
+    return data.map((product) => (
+      <Grid key={product._id} item md={4} lg={4}>
+        <ProductCard data={product} />
+      </Grid>
+    ));
+  };
+
   return (
     <>
       <div className={styles.shopcontainer}>
@@ -32,11 +41,7 @@ function Shop(props) {
           <div>
             {status === 'success' ? (
               <Grid container spacing={4}>
-                {data.map((product) => (
-                  <Grid key={product._id} item md={4} lg={4}>
-                    <ProductCard data={product} />
-                  </Grid>
-                ))}
+                {productRender(data)}
               </Grid>
             ) : (
               <h4>Not any Products</h4>

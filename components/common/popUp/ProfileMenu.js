@@ -11,7 +11,9 @@ import {
   Divider,
   makeStyles,
 } from '@material-ui/core';
-import { CgProfile } from 'react-icons/cg';
+
+import { RiAdminFill } from 'react-icons/ri';
+import { FaCartArrowDown } from 'react-icons/fa';
 import { BiLogOut } from 'react-icons/bi';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Router from 'next/router';
@@ -77,8 +79,16 @@ function ProfileMenu(props) {
               </Typography>
               <Divider />
               <List dense>
+                <ListItem button onClick={() => Router.push('/admin')}>
+                  <RiAdminFill
+                    size='20'
+                    color='#6b6767'
+                    className={classes.icon}
+                  />
+                  <ListItemText primary='Admin Dashboard' />
+                </ListItem>
                 <ListItem button onClick={() => Router.push('/history')}>
-                  <CgProfile
+                  <FaCartArrowDown
                     size='20'
                     color='#6b6767'
                     className={classes.icon}
