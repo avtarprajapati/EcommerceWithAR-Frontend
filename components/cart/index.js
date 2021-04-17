@@ -8,6 +8,8 @@ import { checkoutItem } from '../../api/booking';
 import { loadStripe } from '@stripe/stripe-js';
 import styles from './index.module.scss';
 
+// page id product view
+//http://localhost:3000/6062f9dc050e3d2ed02b1f3a
 let stripe = (async () =>
   await loadStripe(
     'pk_test_51IfReySCdPtYj5Y23V0v2NJL9oqgYbnOjudKJ0RqgSJAJFbjfGxm6qEib15EPDAlsqYtScL29rkC5zgoQCuLdKM000JTuEuexb'
