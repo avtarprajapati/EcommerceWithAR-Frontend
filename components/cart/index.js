@@ -56,7 +56,6 @@ function Cart(props) {
     updateQty.splice(index, 1, item);
     setQtyItems(updateQty);
   };
-  console.log(stripeObj);
 
   const onCheckout = async () => {
     try {
@@ -66,10 +65,9 @@ function Cart(props) {
       }));
 
       const { data } = await checkoutItem(userInfo._id, checkoutData);
-      console.log(data);
 
       const value = await stripeObj.redirectToCheckout({
-        sessionId: data.session.id,
+        sessionId: data.id,
       });
     } catch (error) {
       console.log(error);

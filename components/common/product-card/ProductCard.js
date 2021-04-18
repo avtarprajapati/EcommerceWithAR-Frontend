@@ -45,9 +45,20 @@ export const ProductCard = (props) => {
         >
           View
         </Button>
-        {/* <Button size='small' color='primary' onClick={() => props.onCart(_id)}>
-          Add to Cart
-        </Button> */}
+        {props?.isAdmin && (
+          <Button size='small' color='primary' onClick={() => props.edit(_id)}>
+            Edit
+          </Button>
+        )}
+        {props?.isAdmin && (
+          <Button
+            size='small'
+            color='primary'
+            onClick={() => props.delete(_id)}
+          >
+            Delete
+          </Button>
+        )}
       </CardActions>
     </Card>
   );

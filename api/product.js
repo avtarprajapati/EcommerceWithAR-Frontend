@@ -14,3 +14,11 @@ export const addProduct = (product) => {
 export const getProductById = (id) => {
   return axios.get(`${api}/products/${id}`);
 };
+
+export const updateProduct = (id, data) => {
+  return axios.patch(`${api}/products/${id}`, data);
+};
+
+export const deleteProduct = (id) => {
+  return axios.delete(`${api}/products/${id}`);
+};

@@ -56,7 +56,7 @@ function Home(props) {
             <Grid container spacing={4}>
               {props.products.slice(0, 3).map((product) => (
                 <Grid key={product._id} item md={4} lg={4}>
-                  <ProductCard data={product} />
+                  <ProductCard data={product} isAdmin={false} />
                 </Grid>
               ))}
             </Grid>

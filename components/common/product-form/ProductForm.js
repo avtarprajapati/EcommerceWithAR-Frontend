@@ -5,10 +5,12 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FileUpload from '../FileUpload';
+import styles from './index.module.scss';
 
 function ProductForm(props) {
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(props?.data ?? {});
   const [progress, setProgress] = useState('');
+  // console.log(props.data);
 
   const onFileUpload = (downloadUrl, base64String) => {
     setProduct({ ...product, imageUrl: downloadUrl });
@@ -25,7 +27,7 @@ function ProductForm(props) {
   };
 
   return (
-    <div>
+    <div className={props?.btnLabel && styles.productform}>
       <Container maxWidth='md'>
         <form onSubmit={onSubmit}>
           <div>
@@ -34,6 +36,7 @@ function ProductForm(props) {
                 id='standard-basic'
                 label='Product Type'
                 name='type'
+                value={product?.type || ''}
                 onChange={onChange}
               />
 
@@ -48,6 +51,7 @@ function ProductForm(props) {
                 id='standard-basic'
                 label='Product Title'
                 name='title'
+                value={product?.title || ''}
                 onChange={onChange}
               />
 
@@ -62,6 +66,7 @@ function ProductForm(props) {
                 id='standard-basic'
                 label='Product Description'
                 name='description'
+                value={product?.description || ''}
                 onChange={onChange}
               />
 
@@ -76,6 +81,7 @@ function ProductForm(props) {
                 id='standard-basic'
                 label='Product Price'
                 name='price'
+                value={product?.price || ''}
                 onChange={onChange}
               />
 
@@ -90,6 +96,7 @@ function ProductForm(props) {
                 id='standard-basic'
                 label='Product Quantity'
                 name='quantity'
+                value={product?.quantity || ''}
                 onChange={onChange}
               />
 
@@ -98,15 +105,20 @@ function ProductForm(props) {
               </FormHelperText>
             </FormControl>
           </div>
-          <div>
-            <FileUpload setProgress={setProgress} onFileUpload={onFileUpload} />
-          </div>
+          {!props?.btnLabel && (
+            <div>
+              <FileUpload
+                setProgress={setProgress}
+                onFileUpload={onFileUpload}
+              />
+            </div>
+          )}
           <Button
             color='primary'
             onClick={onSubmit}
             style={{ marginTop: '10px' }}
           >
-            Product Insert
+            {props?.btnLabel ? props.btnLabel : 'Product Insert'}
           </Button>
         </form>
       </Container>
