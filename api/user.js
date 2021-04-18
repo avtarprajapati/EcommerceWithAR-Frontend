@@ -18,3 +18,7 @@ export const getUserByProfileId = (id) => {
 export const updateUser = (id, updateData) => {
   return axios.patch(`${api}/users/${id}`, updateData);
 };
+
+export const allCount = () => {
+  return axios.get(`${api}/users/allCount`);
+};
