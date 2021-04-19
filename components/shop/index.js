@@ -62,7 +62,6 @@ function Shop(props) {
 
   const onDelete = async (id) => {
     const deleteRes = await deleteProduct(id);
-    console.log(deleteRes);
 
     setSnackbar({
       open: true,
@@ -76,7 +75,7 @@ function Shop(props) {
   };
 
   const productRender = (data) => {
-    if (!data.length) return <h4>Not any Products</h4>;
+    if (!(data?.length || false)) return <h4>Not any Products</h4>;
     return data.map((product) => (
       <Grid key={product._id} item md={4} lg={4}>
         <ProductCard

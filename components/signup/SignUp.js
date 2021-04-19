@@ -61,7 +61,6 @@ function SignUp(props) {
           message: 'Sign failed please try again',
           severity: 'error',
         });
-        console.log(err);
       });
   };
 

@@ -106,7 +106,7 @@ function ProductForm(props) {
             </FormControl>
           </div>
           {!props?.btnLabel && (
-            <div>
+            <div style={{ marginTop: '10px' }}>
               <FileUpload
                 setProgress={setProgress}
                 onFileUpload={onFileUpload}
@@ -116,7 +116,8 @@ function ProductForm(props) {
           <Button
             color='primary'
             onClick={onSubmit}
-            style={{ marginTop: '10px' }}
+            variant='contained'
+            style={{ marginTop: '20px' }}
           >
             {props?.btnLabel ? props.btnLabel : 'Product Insert'}
           </Button>

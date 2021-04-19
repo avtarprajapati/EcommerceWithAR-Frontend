@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './index.module.scss';
 
 function CountDetails(props) {
-  console.log(props);
   const { allDetails } = props;
 
   return (

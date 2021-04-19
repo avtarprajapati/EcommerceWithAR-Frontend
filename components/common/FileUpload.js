@@ -36,7 +36,7 @@ function FileUpload(props) {
             let progress = Math.floor(
               (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             );
-            console.log('Upload is ' + progress + '% done');
+
             setProgress(progress);
           },
           (error) => {
@@ -47,7 +47,7 @@ function FileUpload(props) {
               .getDownloadURL()
               .then(async (downloadURL) => {
                 downloadURL = downloadURL;
-                console.log(downloadURL);
+
                 setImageUrl(downloadURL);
                 baseString = await getBase64String(fileUpload);
                 await onFileUpload(downloadURL, baseString);

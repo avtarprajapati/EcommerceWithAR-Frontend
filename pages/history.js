@@ -11,7 +11,7 @@ function History(props) {
   const getProductData = async (userId) => {
     try {
       const resData = await getBookingDataByUser(userId);
-      // console.log(resData);
+
       setProductData({ data: resData?.data?.data || [], status: 'success' });
     } catch (error) {
       setProductData({ data: [], status: 'failed' });

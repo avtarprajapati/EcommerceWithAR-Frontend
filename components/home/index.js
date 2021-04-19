@@ -33,7 +33,7 @@ function Home(props) {
             <Grid item xs={10} sm={10} md={5} lg={5}>
               <model-viewer
                 height='500px'
-                src='/static/images/model/the_chair_modeling.glb'
+                src='/static/images/model/chairs.glb'
                 camera-controls
                 shadow-intensity='1'
                 ar
