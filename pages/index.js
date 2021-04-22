@@ -11,17 +11,17 @@ export default function Page(props) {
         <link rel='icon' href='/favicon.ico' />
         <meta
           name='description'
-          content='Join Webinar on May 11, 2021 to Learn 1. Why active surveillance of COVID vaccine adverse events is important. 2. Why old ways of managing safety will not work in this COVID era.'
+          content='Ecommerce with ar provide you before buying product you can check it it suitable for you or not.'
         />
-        <meta property='og:title' content='Covid Vaccine Safety Webinar' />
+        <meta property='og:title' content='E-commerce With AR' />
         <meta
           property='og:description'
-          content='Join Webinar on May 11, 2021 to Learn 1. Why active surveillance of COVID vaccine adverse events is important. 2. Why old ways of managing safety will not work in this COVID era.'
+          content='Ecommerce with ar provide you before buying product you can check it it suitable for you or not.'
         />
         <meta property='og:image' content='static/images/ecommerce.jpeg' />
         <meta
           property='og:url'
-          content='https://10xgrowth.com/covid-vaccine-safety'
+          content='https://ecommerce-with-ar.vercel.app/'
         />
       </Head>
       <Layout>
