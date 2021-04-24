@@ -16,6 +16,11 @@ function ProductAdd(props) {
         >
           Edit Page
         </Button>
+        <img
+          src='./static/images/admin.svg'
+          alt='admin'
+          className={styles.adminimg}
+        />
       </div>
       <div className={styles.file}>
         <h4 className={styles.heading}>File Upload</h4>
