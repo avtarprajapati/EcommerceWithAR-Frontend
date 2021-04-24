@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/Image';
 import { connect } from 'react-redux';
 import { useRouter } from 'next/router';
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
+  logo: {
+    marginRight: '5px',
+  },
 }));
 
 function Header(props) {
@@ -37,12 +41,22 @@ function Header(props) {
     <div className={classes.root}>
       <AppBar position='static'>
         <Toolbar>
+          <img
+            alt='ecommerce'
+            src='./static/images/ecommerce-logo.svg'
+            width='50'
+            height='50'
+            className={classes.logo}
+          />
           <Typography variant='h6' className={classes.title}>
             Ecommerce AR
           </Typography>
           <div>
             {Object.keys(props.userInfo || {}).length ? (
               <div className={classes.right}>
+                <Button color='inherit' onClick={() => router.push('/shop')}>
+                  Shop
+                </Button>
                 <IconButton
                   aria-label={`show ${carts} new product`}
                   color='inherit'
@@ -55,9 +69,14 @@ function Header(props) {
                 <ProfileMenu userInfo={props.userInfo} {...props} />
               </div>
             ) : (
-              <Button color='inherit' onClick={() => router.push('/login')}>
-                Login
-              </Button>
+              <>
+                <Button color='inherit' onClick={() => router.push('/shop')}>
+                  Shop
+                </Button>
+                <Button color='inherit' onClick={() => router.push('/login')}>
+                  Login
+                </Button>
+              </>
             )}
           </div>
         </Toolbar>

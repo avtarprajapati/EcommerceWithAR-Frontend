@@ -1,4 +1,5 @@
 .productcard {
+  background: linear-gradient(to top, #fdfdfd, #f3ffff);
   model-viewer {
     height: 300px;
     width: 280px;
@@ -7,7 +8,7 @@
   .p {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
 }

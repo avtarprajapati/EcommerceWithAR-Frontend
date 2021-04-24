@@ -10,130 +10,19 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* rel="stylesheet preload prefetch" as="style" crossorigin="anonymous"
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
-          type="text/css" */}
-          {/* <link
-            href='/static/fonts/poppins/Poppins-Black.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-
-            // rel='preload'
-
-            // crossOrigin=''
-          />
+          {/* Roboto font family */}
+          <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
-            href='/static/fonts/poppins/Poppins-BlackItalic.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
+            href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'
+            rel='stylesheet'
           />
+          {/* Montserrat font family */}
+          <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
-            href='/static/fonts/poppins/Poppins-Bold.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
+            href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap'
+            rel='stylesheet'
           />
-          <link
-            href='/static/fonts/poppins/Poppins-BoldItalic.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
 
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-ExtraBold.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-ExtraBoldItalic.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-ExtraLight.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-ExtraLightItalic.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-Italic.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-Light.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-LightItalic.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-Medium.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-MediumItalic.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-Medium.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          />
-          <link
-            href='/static/fonts/poppins/Poppins-MediumItalic.ttf'
-            rel=' preload prefetch'
-            crossorigin='anonymous'
-            // rel='preload'
-
-            // crossOrigin=''
-          /> */}
           <script
             defer
             type='module'

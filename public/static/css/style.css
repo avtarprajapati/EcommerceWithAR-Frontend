@@ -2,11 +2,27 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80vh;
+}
+@media only screen and (max-width: 800px) {
+  .shopping-img {
+    display: none;
+  }
+}

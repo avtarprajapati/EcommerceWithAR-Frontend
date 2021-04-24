@@ -39,7 +39,16 @@ function LoginPage(props) {
   return (
     <>
       <Layout>
-        <Container maxWidth='sm'>{renderPage(currentPage)}</Container>
+        <Container maxWidth='lg'>
+          <div className='login'>
+            <img
+              src='./static/images/shopping_cart-1.svg'
+              alt='shopping cart'
+              className='shopping-img'
+            />
+            {renderPage(currentPage)}
+          </div>
+        </Container>
       </Layout>
       <SnackbarComp
         open={snackbar.open}

@@ -51,7 +51,7 @@ function Home(props) {
       </Container>
       {props.status === 'success' && (
         <Container maxWidth='lg' className={styles.about}>
-          <h4>Top Products</h4>
+          <h4 className={styles.productheading}>Top Products</h4>
           <div className={styles.products}>
             <Grid container spacing={4}>
               {props.products.slice(0, 3).map((product) => (
