@@ -1,7 +1,21 @@
 .productview {
   .heading {
+    padding-bottom: 20px;
     h3 {
       text-align: center;
     }
+  }
+  .info {
+    padding: 20px;
+    .price {
+      padding: 20px 0;
+      font-weight: 600;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .product {
+    margin: auto;
   }
 }
