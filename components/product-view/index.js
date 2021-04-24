@@ -68,6 +68,7 @@ function ProductView(props) {
                   loading='lazy'
                   ar-modes='scene-viewer webxr quick-look'
                   camera-orbit='0.00001589deg 75deg 2.9m'
+                  className={styles.img}
                 ></model-viewer>
               </div>
             </Grid>
