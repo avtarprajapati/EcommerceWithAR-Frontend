@@ -23,7 +23,7 @@ function ProductView(props) {
   };
 
   const onCart = () => {
-    if (!userInfo?.cart) {
+    if (!userInfo?.carts) {
       setSnackbar({
         open: true,
         message: 'Please login first',
