@@ -15,6 +15,7 @@ function Shop(props) {
 
   useEffect(() => {
     setProducts(data);
+    console.log(data);
   }, [data]);
 
   const [snackbar, setSnackbar] = useState({

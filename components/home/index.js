@@ -37,7 +37,7 @@ function Home(props) {
                 camera-controls
                 shadow-intensity='1'
                 ar
-                loading='lazy'
+                // loading='lazy'
                 ar-modes='scene-viewer webxr quick-look'
                 camera-orbit='0.00001589deg 75deg 2.9m'
               >
